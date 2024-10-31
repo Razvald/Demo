@@ -1,0 +1,15 @@
+ALTER TABLE [Список заказов]
+ADD CONSTRAINT FK_OrderDetails_Orders
+FOREIGN KEY ([Номер товара]) REFERENCES Товар([Id]);
+
+ALTER TABLE [Список заказов]
+ADD CONSTRAINT FK_OrderDetails_Products
+FOREIGN KEY ([Номер клиента]) REFERENCES Клиент(Id);
+
+ALTER TABLE [Список избранных заказов]
+ADD CONSTRAINT FK_FavoriteOrders_Clients
+FOREIGN KEY ([Номер клиента]) REFERENCES Клиент(Id);
+
+ALTER TABLE [Список избранных заказов]
+ADD CONSTRAINT FK_FavoriteOrders_Orders
+FOREIGN KEY ([Номер заказа]) REFERENCES Заказ(Id);
